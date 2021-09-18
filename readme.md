@@ -1,6 +1,6 @@
 # Gorilla Tag Mod Template
 
-.NET Core Project Template for PCVR Gorilla Tag Mods
+.NET Project Template for PCVR Gorilla Tag Mods
 
 ## Usage
 
