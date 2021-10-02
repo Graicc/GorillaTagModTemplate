@@ -6,11 +6,11 @@
 
 To install the template, run
 `dotnet new --install Graic.Template.GorillaTagModTemplate.nuspec` from the command line.
-The template can be used from the command line by running `dotnet new gtmod -A [Authorname]`. Command line help for the template can be found by running `dotnet new gtmod -h`.
+The template can be used from the command line by running `dotnet new gtmod -A [Authorname]`.  Command line help for the template can be found by running `dotnet new gtmod -h`.
 
 To enable the template to be used in Visual Studio, open Visual Studio without code and navigate to `Tools/Options/Environment/Preview Features`.
 Make sure that "Show all .NET Core Templates in the New Project Dialog" is checked.
-The template should then appear in Visual Studio Templates, under "Gorilla Tag Mod".
+You should be able to find the project (made using the template) at your file position in the command line when you ran the command
 
 ## Parameters
 
