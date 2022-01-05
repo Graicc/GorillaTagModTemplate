@@ -12,6 +12,15 @@
   },
   "sourceName": "GorillaTagModTemplateProject",
   "defaultName": "Mod",
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "exclude":["*-v.zip"]
+        }
+      ]
+    }
+  ],
   "symbols": {
     "Framework": {
       "type": "parameter",
