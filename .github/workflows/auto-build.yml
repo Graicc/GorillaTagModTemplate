@@ -1,0 +1,37 @@
+name: Auto Build
+on: 
+  workflow_dispatch:
+  push:
+    branches: [master,main,ci]
+    paths-ignore:
+      - '**.yml'
+      - '!.github/workflows/auto-build.yml'
+      - '**.md'
+      - '.gitignore'
+  pull_request:
+    branches: [master,main]
+
+jobs:
+  build:
+    name: build
+    runs-on: windows-latest
+    steps:
+    # Setup
+    - uses: actions/checkout@v1
+    # Build the mod
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v1
+    - name: Build project
+      run: |
+        nuget pack src\GorillaTagModTemplate.nuspec -NoDefaultExcludes -OutputDirectory .\nupkg
+        copy src\install.ps1 .\nupkg\
+
+    # Upload the mod
+    - name: Upload to GitHub
+      env:
+        WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+      if: "${{ env.WEBHOOK_URL == '' }}" # If there is no webhook, upload to the action
+      uses: actions/upload-artifact@v1
+      with:
+        name: GorillaTagModTemplate
+        path: .\nupkg

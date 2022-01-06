@@ -3,7 +3,7 @@
   <metadata>
     <id>Graic.Template.GorillaTagModTemplate.nuspec</id>
 		<title>Gorilla Tag Mod Template</title>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
     <description>
 			Template for creating PCVR Gorilla Tag mods.
     </description>
@@ -15,6 +15,6 @@
     </packageTypes>
   </metadata>
   <files>
-    <file src="Content\**\*.*;Content\**\GorillaTagModTemplateProject\*.*;Content\**\.gitignore" exclude="Content\**\**\bin\**\*.*;Content\**\**\obj\**\*.*;Content\**\.vs\**\**\*.*" target="Content" />
+    <file src="Content\**\*.*" exclude="Content\**\**\bin\**\*.*;Content\**\**\obj\**\*.*;Content\**\.vs\**\**\*.*" target="Content" />
   </files>  
 </package>
