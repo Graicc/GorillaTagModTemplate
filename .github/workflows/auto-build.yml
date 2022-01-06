@@ -33,5 +33,5 @@ jobs:
       if: "${{ env.WEBHOOK_URL == '' }}" # If there is no webhook, upload to the action
       uses: actions/upload-artifact@v1
       with:
-        name: GorillaTagModTemplate.nupkg
+        name: GorillaTagModTemplate
         path: .\nupkg
