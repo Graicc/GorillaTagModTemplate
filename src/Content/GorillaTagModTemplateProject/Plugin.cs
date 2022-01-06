@@ -12,19 +12,30 @@ namespace GorillaTagModTemplateProject
 	{
 		bool inRoom;
 
-		void Awake()
-		{
+		void OnEnable() {
+			/* Set up your mod here */
 			HarmonyPatches.ApplyHarmonyPatches();
 			Utilla.Events.GameInitialized += OnGameInitialized;
+
+		}
+
+		void OnDisable() {
+			/* Undo mod setup here */
+			/* This provides support for toggling mods with ComputerInterface, please implement it :) */
+			HarmonyPatches.RemoveHarmonyPatches();
+			Utilla.Events.GameInitialized -= OnGameInitialized;
+
 		}
 
 		void OnGameInitialized(object sender, EventArgs e)
 		{
 			/* Code here runs after the game initializes (i.e. GorillaLocomotion.Player.Instance != null) */
+
 		}
 
 		void Update()
 		{
+			/* Code here runs every frame when the mod is enabled */
 
 		}
 
@@ -33,6 +44,7 @@ namespace GorillaTagModTemplateProject
 		{
 			/* Enable your mod here */
 			inRoom = true;
+
 		}
 
 		[ModdedGamemodeLeave]
@@ -40,6 +52,7 @@ namespace GorillaTagModTemplateProject
 		{
 			/* Disable your mod here */
 			inRoom = false;
+
 		}
 	}
 }
