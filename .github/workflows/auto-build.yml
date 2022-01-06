@@ -2,7 +2,7 @@ name: Auto Build
 on: 
   workflow_dispatch:
   push:
-    branches: [master,main]
+    branches: [master,main,ci]
     paths-ignore:
       - '**.yml'
       - '!.github/workflows/auto-build.yml'
