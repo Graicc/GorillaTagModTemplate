@@ -24,7 +24,7 @@ jobs:
     - name: Build project
       run: |
         nuget pack src\GorillaTagModTemplate.nuspec -NoDefaultExcludes -OutputDirectory .\nupkg
-        mv nupkg\*.nupkg .\GorillaTagModTemplate.nupkg
+        copy install.ps1 .\nupkg\
 
     # Upload the mod
     - name: Upload to GitHub
@@ -34,4 +34,4 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: GorillaTagModTemplate.nupkg
-        path: GorillaTagModTemplate.nupkg
+        path: .\nupkg
