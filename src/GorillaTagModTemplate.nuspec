@@ -15,6 +15,6 @@
     </packageTypes>
   </metadata>
   <files>
-    <file src="Content\**\*.*;Content\**\GorillaTagModTemplateProject\*.*;Content\**\.gitignore" exclude="Content\**\**\bin\**\*.*;Content\**\**\obj\**\*.*;Content\**\.vs\**\**\*.*" target="Content" />
+    <file src="Content\**\*.*" exclude="Content\**\**\bin\**\*.*;Content\**\**\obj\**\*.*;Content\**\.vs\**\**\*.*" target="Content" />
   </files>  
 </package>
