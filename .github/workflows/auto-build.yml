@@ -22,9 +22,8 @@ jobs:
     - name: Setup dotnet
       uses: actions/setup-dotnet@v1
     - name: Build project
-      working-directory: src
       run: |
-        nuget pack .\GorillaTagModTemplate.nuspec -NoDefaultExcludes -OutputDirectory .\nupkg
+        nuget pack src\GorillaTagModTemplate.nuspec -NoDefaultExcludes -OutputDirectory .\nupkg
         mv nupkg\*.nupkg .\GorillaTagModTemplate.nupkg
 
     # Upload the mod
