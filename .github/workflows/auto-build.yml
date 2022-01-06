@@ -24,7 +24,7 @@ jobs:
     - name: Build project
       run: |
         nuget pack src\GorillaTagModTemplate.nuspec -NoDefaultExcludes -OutputDirectory .\nupkg
-        copy install.ps1 .\nupkg\
+        copy src\install.ps1 .\nupkg\
 
     # Upload the mod
     - name: Upload to GitHub
