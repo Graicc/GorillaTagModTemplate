@@ -10,6 +10,8 @@ function Reset-Templates{
     }
 }
 
+$MyInvocation.MyCommand.Path | Split-Path | Push-Location # Run from this script's directory
 Reset-Templates
 nuget.exe pack .\GorillaTagModTemplate.nuspec -NoDefaultExcludes -OutputDirectory .\nupkg
-dotnet new --install C:\Users\craig\source\repos\GorillaTagModTemplate\src\nupkg\Graic.Template.GorillaTagModTemplate.nuspec.1.1.0.nupkg
+dotnet new --install nupkg\Graic.Template.GorillaTagModTemplate.nuspec.1.1.0.nupkg
+Pop-Location
