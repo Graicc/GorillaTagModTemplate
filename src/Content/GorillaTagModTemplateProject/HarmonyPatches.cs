@@ -4,6 +4,10 @@ using HarmonyLib;
 
 namespace GorillaTagModTemplateProject
 {
+	/// <summary>
+	/// This class handles applying harmony patches to the game.
+	/// You should not need to modify this class.
+	/// </summary>
 	public class HarmonyPatches
 	{
 		private static Harmony instance;
