@@ -3,7 +3,7 @@
   <metadata>
     <id>Graic.Template.GorillaTagModTemplate.nuspec</id>
 		<title>Gorilla Tag Mod Template</title>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
     <description>
 			Template for creating PCVR Gorilla Tag mods.
     </description>
