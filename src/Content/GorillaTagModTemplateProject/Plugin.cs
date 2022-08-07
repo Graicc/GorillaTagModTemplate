@@ -17,21 +17,29 @@ namespace GorillaTagModTemplateProject
 	{
 		bool inRoom;
 
-		void OnEnable() {
+		void Start()
+		{
+			/* A lot of Gorilla Tag systems will not be set up when start is called /*
+			/* Put code in OnGameInitialized to avoid null references */
+
+			Utilla.Events.GameInitialized += OnGameInitialized;
+		}
+
+		void OnEnable()
+		{
 			/* Set up your mod here */
 			/* Code here runs at the start and whenever your mod is enabled*/
 
 			HarmonyPatches.ApplyHarmonyPatches();
-			Utilla.Events.GameInitialized += OnGameInitialized;
 		}
 
-		void OnDisable() {
+		void OnDisable()
+		{
 			/* Undo mod setup here */
 			/* This provides support for toggling mods with ComputerInterface, please implement it :) */
 			/* Code here runs whenever your mod is disabled (including if it disabled on startup)*/
 
 			HarmonyPatches.RemoveHarmonyPatches();
-			Utilla.Events.GameInitialized -= OnGameInitialized;
 		}
 
 		void OnGameInitialized(object sender, EventArgs e)
